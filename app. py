@@ -1,0 +1,78 @@
+import streamlit as st
+
+# Page Configuration
+st.set_page_config(
+    page_title="Nassau Candy Analytics Dashboard",
+    page_icon="📊",
+    layout="wide"
+)
+
+# App Header
+st.title("📊 Nassau Candy Distributor Analytics Dashboard")
+st.markdown("---")
+
+# KPI Summary Section
+col1, col2, col3, col4 = st.columns(4)
+with col1:
+    st.metric(label="Total Sales", value="$141,784", delta="44% YoY")
+with col2:
+    st.metric(label="Gross Profit", value="$93,443")
+with col3:
+    st.metric(label="Total Orders / Shipments", value="10,194")
+with col4:
+    st.metric(label="Profit Margin", value="65.9%")
+
+st.markdown("---")
+
+# Navigation Sidebar
+st.sidebar.title("Dashboard Navigation")
+page = st.sidebar.radio(
+    "Select Report Page:",
+    [
+        "Page 1: Executive Summary",
+        "Page 2: Shipping Route Efficiency",
+        "Page 3: Product Performance",
+        "Page 4: Regional Analysis",
+        "Page 5: Customer & Order Analysis",
+        "Page 6: Recommendations & Key Findings"
+    ]
+)
+
+# Page Rendering Logic
+if page == "Page 1: Executive Summary":
+    st.header("Page 1: Executive Summary")
+    st.image("page1.png", use_column_width=True)
+
+elif page == "Page 2: Shipping Route Efficiency":
+    st.header("Page 2: Shipping Route Efficiency")
+    st.image("page2.png", use_column_width=True)
+
+elif page == "Page 3: Product Performance":
+    st.header("Page 3: Product Performance")
+    st.image("page3.png", use_column_width=True)
+
+elif page == "Page 4: Regional Analysis":
+    st.header("Page 4: Regional Analysis")
+    st.image("page4.png", use_column_width=True)
+
+elif page == "Page 5: Customer & Order Analysis":
+    st.header("Page 5: Customer & Order Analysis")
+    st.image("page5.png", use_column_width=True)
+
+elif page == "Page 6: Recommendations & Key Findings":
+    st.header("Page 6: Profitability & Recommendations")
+    st.image("page6.png", use_column_width=True)
+    
+    col_a, col_b = st.columns(2)
+    with col_a:
+        st.subheader("Key Findings")
+        st.write("- **Data Quality:** Fixed future ship dates by deriving Lead Time from Ship Mode.")
+        st.write("- **Business:** Chocolate dominates sales at 92.9% ($131k).")
+        st.write("- **Route Efficiency:** Fastest route is Ohio (3.45d), slowest is Tennessee (4.38d).")
+        st.write("- **Growth:** 44% YoY growth demonstrating strong scalability.")
+
+    with col_b:
+        st.subheader("Action Plan")
+        st.write("- **Focus Marketing:** Expand Chocolate division in the Pacific region (32.7% share).")
+        st.write("- **Logistics:** Negotiate with carriers on slow routes (Tennessee/Gulf).")
+        st.write("- **Product Optimization:** Reprice or discontinue Sugar division (4.2% contribution).")
