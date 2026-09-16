@@ -101,6 +101,4 @@ This reads `data/Nassau_Candy_Distributor.csv`, validates and standardizes it, e
 
 ---
 
-## 6. Author Notes
 
-This project was built as part of a self-directed portfolio exercise simulating a real logistics-analytics engagement (originally scoped as a Nassau Candy Distributor shipping efficiency brief). All business recommendations are illustrative and should be validated against the final cleaned dataset before being quoted as fact in an interview.
